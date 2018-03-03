@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  db:
+    container_name: mysql-db
+    image: mysql
+    command: --max_allowed_packet=62505856
+    restart: always
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123root123
+    ports:
+      - 3306:3306
